@@ -13,6 +13,8 @@ This repository contains a reference WordPress plugin that demonstrates the mini
 - Security is paramount: sanitize, validate, and escape all data appropriately, and include WordPress nonces in every form or action handler.
 - Write comprehensive PHPDoc blocks for all classes, methods, functions, and hooks.
 - Use tabs—not spaces—for indentation in PHP files to align with WPCS expectations.
+- Create unit tests for every feasible piece of functionality and keep them up to date with any change.
+- Execute the full automated test suite (or as much as is technically possible) before delivering any work.
 
 ## Platform Compatibility
 - Maintain compatibility with WordPress core versions 4.7 through 6.9.

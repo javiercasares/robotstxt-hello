@@ -3,9 +3,9 @@
  * Plugin Name:       Robots.txt Hello
  * Plugin URI:        https://example.com/plugins/robotstxt-hello
  * Description:       Adds a Hello admin page for demonstration purposes.
- * Version:           1.0.0
- * Requires at least: 6.3
- * Requires PHP:      8.2
+ * Version:           1.0.1
+ * Requires at least: 4.7
+ * Requires PHP:      5.6
  * Author:            Example Author
  * Author URI:        https://example.com
  * License:           GPLv2 or later

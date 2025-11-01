@@ -16,7 +16,7 @@ if ( ! class_exists( 'Robotstxt_Hello_Plugin' ) ) {
 		 *
 		 * @return void
 		 */
-		public function register(): void {
+		public function register() {
 			add_action( 'admin_menu', array( $this, 'register_admin_menu' ) );
 		}
 
@@ -25,7 +25,7 @@ if ( ! class_exists( 'Robotstxt_Hello_Plugin' ) ) {
 		 *
 		 * @return void
 		 */
-		public function register_admin_menu(): void {
+		public function register_admin_menu() {
 			add_menu_page(
 				esc_html__( 'Hello', 'robotstxt-hello' ),
 				esc_html__( 'Hello', 'robotstxt-hello' ),
@@ -42,7 +42,7 @@ if ( ! class_exists( 'Robotstxt_Hello_Plugin' ) ) {
 		 *
 		 * @return void
 		 */
-		public function render_admin_page(): void {
+		public function render_admin_page() {
 			echo '<div class="wrap">';
 			echo '<h1>' . esc_html__( 'Hello', 'robotstxt-hello' ) . '</h1>';
 			echo '</div>';

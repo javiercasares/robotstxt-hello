@@ -1,2 +1,5 @@
+= 1.0.1 =
+* Broadened compatibility to cover WordPress 4.7+ and PHP 5.6+ while keeping the Hello admin page unchanged.
+
 = 1.0.0 =
 * Added the Hello admin page and menu entry.
