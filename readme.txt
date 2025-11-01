@@ -2,7 +2,7 @@
 Contributors: javiercasares
 Requires at least: 4.7
 Tested up to: 6.9
-Stable tag: 1.0.3
+Stable tag: 1.0.4
 Requires PHP: 5.6
 License: GPL-2.0-or-later
 License URI: https://spdx.org/licenses/GPL-2.0-or-later.html
@@ -11,6 +11,9 @@ License URI: https://spdx.org/licenses/GPL-2.0-or-later.html
 Provides a minimal Hello admin page for demonstration purposes.
 
 == Changelog ==
+= 1.0.4 =
+* Documented the plugin internals with PHPDoc blocks and loaded the text domain to ensure translations are available in WordPress.
+
 = 1.0.3 =
 * Added translation files for 50 locales to improve WordPress i18n coverage.
 
