@@ -3,7 +3,7 @@
  * Plugin Name:       ROBOTSTXT Hello
  * Plugin URI:        https://www.robotstxt.es/plugins/robotstxt-hello
  * Description:       Adds a Hello admin page for demonstration purposes.
- * Version:           1.0.0
+ * Version:           1.0.1
  * Requires at least: 4.7
  * Requires PHP:      5.6
  * Author:            ROBOTSTXT
