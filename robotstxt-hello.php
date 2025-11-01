@@ -1,19 +1,19 @@
 <?php
 /**
- * Plugin Name:       Robots.txt Hello
- * Plugin URI:        https://example.com/plugins/robotstxt-hello
+ * Plugin Name:       ROBOTSTXT Hello
+ * Plugin URI:        https://www.robotstxt.es/plugins/robotstxt-hello
  * Description:       Adds a Hello admin page for demonstration purposes.
  * Version:           1.0.0
- * Requires at least: 6.3
- * Requires PHP:      8.2
- * Author:            Example Author
- * Author URI:        https://example.com
- * License:           GPLv2 or later
- * License URI:       https://www.gnu.org/licenses/gpl-2.0.html
+ * Requires at least: 4.7
+ * Requires PHP:      5.6
+ * Author:            ROBOTSTXT
+ * Author URI:        https://www.robotstxt.es/
+ * License:           GPL-2.0-or-later
+ * License URI:       https://spdx.org/licenses/GPL-2.0-or-later.html
  * Text Domain:       robotstxt-hello
  * Domain Path:       /languages
  *
- * @package Robotstxt_Hello
+ * @package ROBOTSTXT_Hello
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
