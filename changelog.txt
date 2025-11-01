@@ -1,3 +1,6 @@
+= 1.0.3 =
+* Added translation files for 50 locales to improve WordPress i18n coverage.
+
 = 1.0.2 =
 * Confirmed compatibility with PHP 5.6 through PHP 8.4 via PHPCompatibilityWP checks.
 
