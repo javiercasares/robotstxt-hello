@@ -14,6 +14,10 @@ This repository contains a reference WordPress plugin that demonstrates the mini
 - Write comprehensive PHPDoc blocks for all classes, methods, functions, and hooks.
 - Use tabs—not spaces—for indentation in PHP files to align with WPCS expectations.
 
+## Platform Compatibility
+- Maintain compatibility with WordPress core versions 4.7 through 6.9.
+- Support PHP versions 5.6 through 8.4 while prioritizing modern best practices.
+
 ## Documentation Practices
 - Maintain thorough documentation in U.S. English across code comments and Markdown files.
 - Record every significant change both in `changelog.txt` and `readme.txt`, ensuring the entries stay synchronized.
