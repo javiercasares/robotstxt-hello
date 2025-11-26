@@ -9,6 +9,8 @@ Version: 1.1.2
 License: GPL-3.0-or-later
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
 
+Provides a minimal Hello admin page for demonstration purposes.
+
 == Description ==
 Provides a minimal Hello admin page for demonstration purposes.
 
