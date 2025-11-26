@@ -1,9 +1,11 @@
 === Hello (by ROBOTSTXT) ===
 Contributors: javiercasares
+Tags: hello-world
 Requires at least: 6.5
 Tested up to: 6.9
 Stable tag: 1.1.2
 Requires PHP: 8.2
+Version: 1.1.2
 License: GPL-3.0-or-later
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
 
