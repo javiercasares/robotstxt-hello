@@ -1,3 +1,6 @@
+= 1.1.1 =
+* Added compiled translation catalogs for supported locales (Catalan, German, Spanish, Basque, French, Galician, Italian, Polish, Portuguese) so localized greetings render without requiring manual compilation.
+
 = 1.1.0 =
 * DID Support
 

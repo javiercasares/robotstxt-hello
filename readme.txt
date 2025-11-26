@@ -11,6 +11,9 @@ License URI: https://spdx.org/licenses/GPL-2.0-or-later.html
 Provides a minimal Hello admin page for demonstration purposes.
 
 == Changelog ==
+= 1.1.1 =
+* Added compiled translation catalogs for supported locales (Catalan, German, Spanish, Basque, French, Galician, Italian, Polish, Portuguese) so localized greetings render without requiring manual compilation.
+
 = 1.1.0 =
 * DID Support
 
