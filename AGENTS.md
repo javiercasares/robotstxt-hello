@@ -1,82 +1,73 @@
-# WordPress FAIR Compatibility Plugin Guidelines
+# Development Guidelines
 
-This repository contains a reference WordPress plugin that demonstrates the minimal structure required to be interoperable with FAIR tools.
-
-## Functional Scope
-- The plugin must register a single top-level admin menu labeled **Hello**.
-- The admin page rendered by the menu should display only the page title "Hello" and no additional content.
-- The plugin is intentionally lightweight and serves purely as an integration example.
-
-## Coding Standards & Security
-- Follow PHP_CodeSniffer (PHPCS) and WordPress Coding Standards (WPCS) rigorously across all PHP sources.
-- Ensure every change complies with PHP 8.2+ syntax and best practices; do not decrease the minimum supported version advertised in the plugin header.
-- Security is paramount: sanitize, validate, and escape all data appropriately, and include WordPress nonces in every form or action handler.
-- Provide comprehensive PHPDoc blocks for every class, interface, trait, function, method, hook callback, and property within the plugin.
-- Use tabs—not spaces—for indentation in PHP files to align with WPCS expectations.
-- Create unit tests for every feasible piece of functionality and keep them up to date with any change.
-- Execute the full automated test suite (or as much as is technically possible) before delivering any work.
+These rules apply to the entire repository.
 
 ## Platform Compatibility
-- Maintain compatibility with WordPress core versions 4.7 through 6.9.
-- Support PHP versions 5.6 through 8.4 while prioritizing modern best practices.
 
-## Internationalization Requirements
-- Ensure the plugin remains fully compatible with WordPress internationalization (i18n) mechanisms, including proper loading of text domains and translation files.
-- Create and maintain translation files for all supported locales, keeping them synchronized with the source strings.
-- Required translation files:
-  1. English (`en`)
-  2. Mandarin Chinese (`zh`)
-  3. Hindi (`hi`)
-  4. Spanish (`es`)
-  5. French (`fr`)
-  6. Standard Arabic (`ar`)
-  7. Bengali (`bn`)
-  8. Portuguese (`pt`)
-  9. Russian (`ru`)
-  10. Urdu (`ur`)
-  11. Indonesian (`id`)
-  12. German (`de`)
-  13. Japanese (`ja`)
-  14. Swahili (`sw`)
-  15. Marathi (`mr`)
-  16. Telugu (`te`)
-  17. Turkish (`tr`)
-  18. Tamil (`ta`)
-  19. Vietnamese (`vi`)
-  20. Korean (`ko`)
-  21. Italian (`it`)
-  22. Hausa (`ha`)
-  23. Thai (`th`)
-  24. Persian (Farsi) (`fa`)
-  25. Polish (`pl`)
-  26. Ukrainian (`uk`)
-  27. Malay (`ms`)
-  28. Kannada (`kn`)
-  29. Wu Chinese (Shanghainese) (`wuu`)
-  30. Yue Chinese (Cantonese) (`yue`)
-  31. Burmese (`my`)
-  32. Javanese (`jv`)
-  33. Filipino (Tagalog) (`tl`)
-  34. Punjabi (`pa`)
-  35. Romani (`rom`)
-  36. Gujarati (`gu`)
-  37. Bhojpuri (`bho`)
-  38. Malayalam (`ml`)
-  39. Oromo (`om`)
-  40. Sindhi (`sd`)
-  41. Dutch (`nl`)
-  42. Kurdish Kurmanji (`ku`)
-  43. Czech (`cs`)
-  44. Swedish (`sv`)
-  45. Hungarian (`hu`)
-  46. Hebrew (`he`)
-  47. Greek (`el`)
-  48. Finnish (`fi`)
-  49. Danish (`da`)
-  50. Norwegian (`no`)
+* WordPress core: **6.5 → 6.9**
+* PHP: **8.2 → 8.5** (use modern syntax; never drop the minimum version declared in the plugin header)
 
-## Documentation Practices
-- Maintain thorough documentation in U.S. English across code comments and Markdown files.
-- Record every significant change both in `changelog.txt` and `readme.txt`, ensuring the entries stay synchronized.
+## Language
 
-Adhering to these guidelines keeps the example plugin consistent, secure, and easy to understand.
+* All documentation, copy, comments, and code annotations must be written in **American English**.
+
+## Code Standards
+
+* All PHP must follow **PHPCS** and **WordPress Coding Standards (WPCS)** without exceptions.
+* **Tabs** are required for indentation in PHP files.
+* All code must remain fully compatible with **PHP 8.2+** and follow modern best practices.
+* Provide complete **PHPDoc** for:
+  * Classes, interfaces, traits
+  * Functions and methods
+  * Hook callbacks
+  * All properties
+* Security requirements:
+  * Sanitize, validate, and escape all external input.
+  * Use WordPress nonces in every form or action handler.
+  * Never suppress validation or authentication failures.
+
+## WordPress Security
+
+* Sanitize, validate, and escape **all** user-supplied data.
+* Add and verify nonces for any form or request that performs actions.
+* Do not hide or suppress errors related to validation or permissions.
+
+## Plugin Structure
+
+* Keep functional code modular under **`includes/`**.
+* Place admin-specific logic inside **`includes/admin/`** subdirectories.
+* Store all UI templates in **`templates/`**.
+* When introducing persistent data (options, tables, user meta, etc.):
+  * Update **`uninstall.php`** to remove all related data on uninstall.
+
+## Testing and Tooling
+
+* Run all automated checks before submitting work:
+  * **PHPCS**
+  * **PHPUnit**
+  * Any additional project-specific tooling
+* Create and maintain unit tests for every practical piece of functionality.
+* After running checks, provide a brief summary of executed commands and their outcomes.
+
+## Documentation
+
+* Update **`readme.txt`** and **`changelog.txt`** for any functional change.
+* Add explanatory comments when intent is not immediately obvious.
+
+## Internationalization (i18n)
+
+* Ensure the plugin follows all WordPress i18n rules:
+  * Correct use of translation functions (`__()`, `_e()`, `_x()`, etc.)
+  * Proper text-domain loading
+  * Up-to-date translation templates
+* Maintain translation files for the following locales:
+  * Catalan (`ca`)
+  * German (`de`)
+  * English (`en`)
+  * Spanish (`es`)
+  * Basque (`eu`)
+  * French (`fr`)
+  * Galician (`gl`)
+  * Italian (`it`)
+  * Polish (`pl`)
+  * Portuguese (`pt`)
