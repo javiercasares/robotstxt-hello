@@ -1,9 +1,9 @@
 === Hello (by ROBOTSTXT) ===
 Contributors: javiercasares
-Requires at least: 4.7
+Requires at least: 6.5
 Tested up to: 6.9
-Stable tag: 1.1.1
-Requires PHP: 5.6
+Stable tag: 1.1.2
+Requires PHP: 8.2
 License: GPL-2.0-or-later
 License URI: https://spdx.org/licenses/GPL-2.0-or-later.html
 
@@ -11,6 +11,9 @@ License URI: https://spdx.org/licenses/GPL-2.0-or-later.html
 Provides a minimal Hello admin page for demonstration purposes.
 
 == Changelog ==
+= 1.1.2 =
+* Raised the minimum WordPress requirement to 6.5 and PHP to 8.2 so the plugin matches the AGENTS development guidelines while keeping the Hello admin page untouched.
+
 = 1.1.1 =
 * Added compiled translation catalogs for supported locales (Catalan, German, Spanish, Basque, French, Galician, Italian, Polish, Portuguese) so localized greetings render without requiring manual compilation.
 
