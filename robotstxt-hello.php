@@ -6,6 +6,8 @@
  * Version:           1.1.0
  * Requires at least: 4.7
  * Requires PHP:      5.6
+ * Network:           true
+ * Security:          robotstxt@robotstxt.es
  * Author:            ROBOTSTXT
  * Author URI:        https://www.robotstxt.es/
  * Text Domain:       robotstxt-hello
