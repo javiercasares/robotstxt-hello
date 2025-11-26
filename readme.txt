@@ -4,8 +4,8 @@ Requires at least: 6.5
 Tested up to: 6.9
 Stable tag: 1.1.2
 Requires PHP: 8.2
-License: GPL-2.0-or-later
-License URI: https://spdx.org/licenses/GPL-2.0-or-later.html
+License: GPL-3.0-or-later
+License URI: https://www.gnu.org/licenses/gpl-3.0.html
 
 == Description ==
 Provides a minimal Hello admin page for demonstration purposes.
