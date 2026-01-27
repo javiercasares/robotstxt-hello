@@ -1,3 +1,6 @@
+= 1.2.3 =
+* Test release for update validation.
+
 = 1.2.2 =
 * Removed Plugin ID (DID) from plugin header.
 

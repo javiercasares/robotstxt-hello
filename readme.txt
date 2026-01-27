@@ -3,9 +3,9 @@ Contributors: javiercasares
 Tags: hello-world
 Requires at least: 6.5
 Tested up to: 6.9
-Stable tag: 1.2.2
+Stable tag: 1.2.3
 Requires PHP: 8.2
-Version: 1.2.2
+Version: 1.2.3
 License: GPL-3.0-or-later
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
 
@@ -15,6 +15,9 @@ Provides a minimal Hello admin page for demonstration purposes.
 Provides a minimal Hello admin page for demonstration purposes.
 
 == Changelog ==
+= 1.2.3 =
+* Test release for update validation.
+
 = 1.2.2 =
 * Removed Plugin ID (DID) from plugin header.
 
