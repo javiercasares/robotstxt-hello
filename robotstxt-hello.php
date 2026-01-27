@@ -3,7 +3,7 @@
  * Plugin Name:       Hello (by ROBOTSTXT)
  * Plugin URI:        https://git.robotstxt.es/ROBOTSTXT/robotstxt-hello
  * Description:       Adds a Hello admin page for demonstration purposes.
- * Version:           1.2.1
+ * Version:           1.2.2
  * Requires at least: 6.5
  * Requires PHP:      8.2
  * Network:           true
@@ -16,7 +16,6 @@
  * License URI:       https://www.gnu.org/licenses/gpl-3.0.html
  * Gitea Plugin URI:  https://git.robotstxt.es/ROBOTSTXT/robotstxt-hello
  * Primary Branch:    main
- * Plugin ID:         did:plc:7umwjtio3qenfqiai2m5gsgg
  *
  * @package ROBOTSTXT_Hello
  */

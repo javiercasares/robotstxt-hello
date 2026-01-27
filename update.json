@@ -1,13 +1,13 @@
 {
   "name": "Hello (by ROBOTSTXT)",
   "slug": "robotstxt-hello",
-  "version": "1.2.1",
+  "version": "1.2.2",
   "requires": "6.5",
   "tested": "6.7",
   "requires_php": "8.2",
   "homepage": "https://git.robotstxt.es/ROBOTSTXT/robotstxt-hello",
-  "download_url": "https://git.robotstxt.es/ROBOTSTXT/robotstxt-hello/releases/download/1.2.1/robotstxt-hello-1.2.1.zip",
+  "download_url": "https://git.robotstxt.es/ROBOTSTXT/robotstxt-hello/releases/download/1.2.2/robotstxt-hello-1.2.2.zip",
   "author": "ROBOTSTXT",
   "description": "Adds a Hello admin page for demonstration purposes. This plugin provides a simple admin interface example for WordPress development.",
-  "changelog": "<ul><li><strong>1.2.1</strong> – Test release to validate the Auto-Updater system is working correctly.</li><li><strong>1.2.0</strong> – Added generic JSON-based Auto-Updater system. Plugin now updates automatically from git.robotstxt.es without depending on WordPress.org repository.</li><li><strong>1.1.2</strong> – Maintenance release.</li><li><strong>1.1.1</strong> – Bug fixes and improvements.</li><li><strong>1.1.0</strong> – Enhanced admin interface.</li><li><strong>1.0.0</strong> – Initial release.</li></ul>"
+  "changelog": "<ul><li><strong>1.2.2</strong> – Removed Plugin ID (DID) from plugin header.</li><li><strong>1.2.1</strong> – Test release to validate the Auto-Updater system is working correctly.</li><li><strong>1.2.0</strong> – Added generic JSON-based Auto-Updater system. Plugin now updates automatically from git.robotstxt.es without depending on WordPress.org repository.</li><li><strong>1.1.2</strong> – Maintenance release.</li><li><strong>1.1.1</strong> – Bug fixes and improvements.</li><li><strong>1.1.0</strong> – Enhanced admin interface.</li><li><strong>1.0.0</strong> – Initial release.</li></ul>"
 }
