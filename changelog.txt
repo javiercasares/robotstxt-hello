@@ -1,3 +1,6 @@
+= 1.2.0 =
+* Added generic JSON-based Auto-Updater system. Plugin now updates automatically from git.robotstxt.es without depending on WordPress.org repository.
+
 = 1.1.2 =
 * Raised the minimum WordPress requirement to 6.5 and PHP to 8.2 so the plugin complies with the AGENTS development guidelines.
 

@@ -3,9 +3,9 @@ Contributors: javiercasares
 Tags: hello-world
 Requires at least: 6.5
 Tested up to: 6.9
-Stable tag: 1.1.2
+Stable tag: 1.2.0
 Requires PHP: 8.2
-Version: 1.1.2
+Version: 1.2.0
 License: GPL-3.0-or-later
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
 
@@ -15,6 +15,9 @@ Provides a minimal Hello admin page for demonstration purposes.
 Provides a minimal Hello admin page for demonstration purposes.
 
 == Changelog ==
+= 1.2.0 =
+* Added generic JSON-based Auto-Updater system. Plugin now updates automatically from git.robotstxt.es without depending on WordPress.org repository.
+
 = 1.1.2 =
 * Raised the minimum WordPress requirement to 6.5 and PHP to 8.2 so the plugin matches the AGENTS development guidelines while keeping the Hello admin page untouched.
 
