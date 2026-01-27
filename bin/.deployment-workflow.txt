@@ -1,0 +1,136 @@
+╔════════════════════════════════════════════════════════════════╗
+║          ROBOTSTXT PLUGIN DEPLOYMENT WORKFLOW                  ║
+╚════════════════════════════════════════════════════════════════╝
+
+┌────────────────────────────────────────────────────────────────┐
+│ STEP 1: Update Version Numbers                                 │
+└────────────────────────────────────────────────────────────────┘
+
+Edit the following files with the new version (e.g., 1.2.0):
+
+  ✓ robotstxt-hello.php (line ~6)
+    * Version: 1.2.0
+
+  ✓ update.json
+    "version": "1.2.0"
+    "download_url": "...archive/v1.2.0.zip"
+
+  ✓ readme.txt
+    Stable tag: 1.2.0
+    Version: 1.2.0
+
+  ✓ changelog.txt
+    = 1.2.0 =
+    * Description of changes...
+
+┌────────────────────────────────────────────────────────────────┐
+│ STEP 2: Validate Everything                                    │
+└────────────────────────────────────────────────────────────────┘
+
+Run the validation script:
+
+  $ ./bin/validate.sh 1.2.0
+
+This checks:
+  • Version consistency across all files
+  • Required files exist
+  • No debugging code
+  • No TODO/FIXME comments
+
+If validation fails, fix issues and run again.
+
+┌────────────────────────────────────────────────────────────────┐
+│ STEP 3: Create Deployment ZIP                                  │
+└────────────────────────────────────────────────────────────────┘
+
+Generate production-ready ZIP:
+
+  $ ./bin/deploy.sh 1.2.0
+
+Output:
+  ../robotstxt-hello-1.2.0.zip
+
+The script:
+  • Excludes dev files (tests, vendor, .git, etc.)
+  • Verifies critical files
+  • Creates clean WordPress-installable ZIP
+
+┌────────────────────────────────────────────────────────────────┐
+│ STEP 4: Test the ZIP                                           │
+└────────────────────────────────────────────────────────────────┘
+
+Install on a test WordPress site:
+
+  1. Upload ZIP via WP Admin → Plugins → Add New → Upload
+  2. Activate the plugin
+  3. Test functionality
+  4. Check for PHP errors/warnings
+
+┌────────────────────────────────────────────────────────────────┐
+│ STEP 5: Commit and Tag                                         │
+└────────────────────────────────────────────────────────────────┘
+
+Create Git commit and tag:
+
+  $ git add .
+  $ git commit -m "Release v1.2.0"
+  $ git tag v1.2.0
+  $ git push origin main --tags
+
+Verify tag creates archive:
+  https://git.robotstxt.es/ROBOTSTXT/robotstxt-hello/archive/v1.2.0.zip
+
+┌────────────────────────────────────────────────────────────────┐
+│ STEP 6: Verify Update System                                   │
+└────────────────────────────────────────────────────────────────┘
+
+Test the auto-updater:
+
+  1. Install previous version on test site
+  2. Force update check:
+     /wp-admin/?robotstxt_clear_update_cache=1
+  3. Verify update appears in Plugins → Updates
+  4. Click "Update now" and verify success
+
+┌────────────────────────────────────────────────────────────────┐
+│ CHECKLIST                                                       │
+└────────────────────────────────────────────────────────────────┘
+
+Before deployment:
+  ☐ All version numbers updated
+  ☐ Changelog updated
+  ☐ Validation passes (./bin/validate.sh)
+  ☐ No debugging code in production files
+  ☐ No TODO/FIXME comments
+
+After deployment:
+  ☐ ZIP tested on clean WordPress install
+  ☐ Git tag created and pushed
+  ☐ Archive URL accessible (v1.2.0.zip)
+  ☐ update.json accessible on main branch
+  ☐ Auto-updater tested and working
+
+┌────────────────────────────────────────────────────────────────┐
+│ TROUBLESHOOTING                                                 │
+└────────────────────────────────────────────────────────────────┘
+
+Version mismatch error:
+  → Check all 4 files: plugin header, update.json, readme.txt, changelog.txt
+
+ZIP has .claude/ or other dev files:
+  → Update exclusions in bin/deploy.sh rsync command
+
+Update not appearing:
+  → Clear cache: ?robotstxt_clear_update_cache=1
+  → Verify JSON accessible on git.robotstxt.es
+  → Check version in update.json is higher than installed
+
+Update fails to install:
+  → Verify ZIP structure: robotstxt-hello/robotstxt-hello.php
+  → Check ZIP is accessible without authentication
+  → Test manual ZIP installation first
+
+╔════════════════════════════════════════════════════════════════╗
+║  All scripts in bin/ are reusable across ROBOTSTXT plugins    ║
+║  Just copy bin/ folder to any new plugin!                     ║
+╚════════════════════════════════════════════════════════════════╝
