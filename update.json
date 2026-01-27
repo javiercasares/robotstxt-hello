@@ -1,0 +1,13 @@
+{
+  "name": "Hello (by ROBOTSTXT)",
+  "slug": "robotstxt-hello",
+  "version": "1.1.2",
+  "requires": "6.5",
+  "tested": "6.7",
+  "requires_php": "8.2",
+  "homepage": "https://git.robotstxt.es/ROBOTSTXT/robotstxt-hello",
+  "download_url": "https://git.robotstxt.es/ROBOTSTXT/robotstxt-hello/archive/v1.1.2.zip",
+  "author": "ROBOTSTXT",
+  "description": "Adds a Hello admin page for demonstration purposes. This plugin provides a simple admin interface example for WordPress development.",
+  "changelog": "<ul><li><strong>1.1.2</strong> \u2013 Current stable version.</li><li><strong>1.1.1</strong> \u2013 Bug fixes and improvements.</li><li><strong>1.1.0</strong> \u2013 Enhanced admin interface.</li><li><strong>1.0.0</strong> \u2013 Initial release.</li></ul>"
+}
