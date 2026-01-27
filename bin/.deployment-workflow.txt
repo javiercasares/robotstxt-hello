@@ -13,7 +13,7 @@ Edit the following files with the new version (e.g., 1.2.0):
 
   ✓ update.json
     "version": "1.2.0"
-    "download_url": "...archive/v1.2.0.zip"
+    "download_url": ".../releases/download/1.2.0/plugin-1.2.0.zip"
 
   ✓ readme.txt
     Stable tag: 1.2.0
@@ -77,8 +77,8 @@ Create Git commit and tag:
   $ git tag v1.2.0
   $ git push origin main --tags
 
-Verify tag creates archive:
-  https://git.robotstxt.es/ROBOTSTXT/robotstxt-hello/archive/v1.2.0.zip
+Verify release is created:
+  https://git.robotstxt.es/ROBOTSTXT/robotstxt-hello/releases/download/1.2.0/robotstxt-hello-1.2.0.zip
 
 ┌────────────────────────────────────────────────────────────────┐
 │ STEP 6: Verify Update System                                   │

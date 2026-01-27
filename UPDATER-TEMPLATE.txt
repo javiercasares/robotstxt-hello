@@ -43,7 +43,7 @@ Robotstxt_Updater::init( __FILE__ );
   "tested": "6.7",
   "requires_php": "8.0",
   "homepage": "https://git.robotstxt.es/ROBOTSTXT/mi-plugin",
-  "download_url": "https://git.robotstxt.es/ROBOTSTXT/mi-plugin/archive/v1.0.0.zip",
+  "download_url": "https://git.robotstxt.es/ROBOTSTXT/mi-plugin/releases/download/1.0.0/mi-plugin-1.0.0.zip",
   "author": "ROBOTSTXT",
   "description": "Descripción del plugin",
   "changelog": "<ul><li><strong>1.0.0</strong> – Primera versión.</li></ul>"

@@ -89,11 +89,16 @@ else
     if [ -z "$DOWNLOAD_URL" ]; then
         print_error "download_url not found in update.json"
         ((ERRORS++))
-    elif [[ ! "$DOWNLOAD_URL" =~ v${PLUGIN_VERSION} ]]; then
-        print_warning "download_url may not match version: ${DOWNLOAD_URL}"
-        ((WARNINGS++))
     else
-        print_success "download_url: ${DOWNLOAD_URL}"
+        # Verify it's the correct format: .../releases/download/VERSION/plugin-VERSION.zip
+        if [[ ! "$DOWNLOAD_URL" =~ /releases/download/${PLUGIN_VERSION}/${PLUGIN_SLUG}-${PLUGIN_VERSION}\.zip$ ]]; then
+            print_error "download_url has incorrect format"
+            print_error "Expected: .../releases/download/${PLUGIN_VERSION}/${PLUGIN_SLUG}-${PLUGIN_VERSION}.zip"
+            print_error "Got: ${DOWNLOAD_URL}"
+            ((ERRORS++))
+        else
+            print_success "download_url: ${DOWNLOAD_URL}"
+        fi
     fi
 fi
 

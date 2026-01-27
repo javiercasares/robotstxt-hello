@@ -4,18 +4,65 @@ Scripts for building and deploying the ROBOTSTXT Hello plugin.
 
 ## Quick Start
 
+### Option 1: Full Release Process (Recommended)
+
 ```bash
-# 1. Validate before deployment
+# One command to rule them all
+./bin/release.sh 1.2.0
+```
+
+This will:
+1. Validate version consistency
+2. Create deployment ZIP
+3. Create Git tag
+4. Prompt to push to remote
+5. Show instructions for Gitea release
+
+### Option 2: Manual Step-by-Step
+
+```bash
+# 1. Validate
 ./bin/validate.sh 1.2.0
 
-# 2. Create deployment ZIP
+# 2. Create ZIP
 ./bin/deploy.sh 1.2.0
 
-# 3. Test the ZIP on a WordPress site
-# 4. Create Git tag and push
+# 3. Create tag manually
+git tag v1.2.0 && git push --tags
+
+# 4. Upload ZIP to Gitea release
 ```
 
 ## Scripts
+
+### release.sh
+
+**Complete release automation script** (recommended for full releases).
+
+#### Usage
+
+```bash
+./bin/release.sh <version>
+```
+
+#### Example
+
+```bash
+./bin/release.sh 1.2.0
+```
+
+#### What it does
+
+1. **Validates** using `validate.sh`
+2. **Creates ZIP** using `deploy.sh`
+3. **Creates Git tag** (v1.2.0)
+4. **Prompts to push** to remote
+5. **Shows Gitea release instructions** with the exact URL format
+6. **Provides verification commands** for testing the update system
+
+This is the easiest way to release a new version. It combines all steps and provides guidance for the Gitea release creation.
+
+---
 
 ### validate.sh
 
@@ -37,7 +84,8 @@ Pre-deployment validation script that checks version consistency and common issu
 
 **Version Consistency:**
 - Main plugin file header (`Version:`)
-- `update.json` (`version` and `download_url`)
+- `update.json` (`version` field)
+- `update.json` (`download_url` format: `.../releases/download/VERSION/plugin-VERSION.zip`)
 - `readme.txt` (`Stable tag:` and `Version:`)
 - `changelog.txt` (entry for version)
 
@@ -200,8 +248,8 @@ After running the script successfully:
    ```
 
 3. **Upload to Gitea**
-   - The tag will automatically create a release archive
-   - Verify: `https://git.robotstxt.es/ROBOTSTXT/robotstxt-hello/archive/v1.2.0.zip`
+   - Create a release for the tag with the deployment ZIP attached
+   - Verify: `https://git.robotstxt.es/ROBOTSTXT/robotstxt-hello/releases/download/1.2.0/robotstxt-hello-1.2.0.zip`
 
 4. **Test the updater**
    - Install an older version on a test site

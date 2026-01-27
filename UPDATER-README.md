@@ -63,7 +63,7 @@ El updater construirá automáticamente la URL del JSON:
   "tested": "6.7",
   "requires_php": "8.0",
   "homepage": "https://git.robotstxt.es/ROBOTSTXT/mi-plugin",
-  "download_url": "https://git.robotstxt.es/ROBOTSTXT/mi-plugin/archive/v1.0.0.zip",
+  "download_url": "https://git.robotstxt.es/ROBOTSTXT/mi-plugin/releases/download/1.0.0/mi-plugin-1.0.0.zip",
   "author": "ROBOTSTXT",
   "description": "Descripción del plugin",
   "changelog": "<ul><li><strong>1.0.0</strong> – Primera versión.</li></ul>"
@@ -86,7 +86,7 @@ El updater construirá automáticamente la URL del JSON:
 ```json
 {
   "version": "1.2.0",
-  "download_url": "https://git.robotstxt.es/ROBOTSTXT/tu-plugin/archive/v1.2.0.zip",
+  "download_url": "https://git.robotstxt.es/ROBOTSTXT/tu-plugin/releases/download/1.2.0/tu-plugin-1.2.0.zip",
   "changelog": "<ul><li><strong>1.2.0</strong> – Nuevas funcionalidades.</li></ul>"
 }
 ```
@@ -103,7 +103,7 @@ git push origin main --tags
 ### Paso 4: Verifica que el ZIP sea accesible
 
 ```bash
-curl -I https://git.robotstxt.es/ROBOTSTXT/tu-plugin/archive/v1.2.0.zip
+curl -I https://git.robotstxt.es/ROBOTSTXT/tu-plugin/releases/download/1.2.0/tu-plugin-1.2.0.zip
 ```
 
 Debe devolver `200 OK`.
@@ -179,7 +179,7 @@ mi-plugin-1.2.0.zip
 
 1. Verifica que sea accesible sin autenticación:
    ```bash
-   curl -I https://git.robotstxt.es/ROBOTSTXT/tu-plugin/archive/v1.2.0.zip
+   curl -I https://git.robotstxt.es/ROBOTSTXT/tu-plugin/releases/download/1.2.0/tu-plugin-1.2.0.zip
    ```
 
 2. Comprueba que Gitea esté configurado para servir archivos públicamente
