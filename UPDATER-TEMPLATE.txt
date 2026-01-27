@@ -1,0 +1,76 @@
+═══════════════════════════════════════════════════════════════════
+  ROBOTSTXT UPDATER - PLANTILLA PARA COPIAR/PEGAR
+═══════════════════════════════════════════════════════════════════
+
+┌─────────────────────────────────────────────────────────────────┐
+│ 1. ARCHIVOS A COPIAR                                            │
+└─────────────────────────────────────────────────────────────────┘
+
+  ✓ robotstxt-updater.php  →  Copiar a la raíz del plugin
+  ✓ update.json            →  Crear en la raíz del plugin
+
+
+┌─────────────────────────────────────────────────────────────────┐
+│ 2. CÓDIGO PARA EL ARCHIVO PRINCIPAL (al final del archivo)     │
+└─────────────────────────────────────────────────────────────────┘
+
+// Initialize ROBOTSTXT updater (auto-configures from plugin headers).
+require_once __DIR__ . '/robotstxt-updater.php';
+Robotstxt_Updater::init( __FILE__ );
+
+
+┌─────────────────────────────────────────────────────────────────┐
+│ 3. HEADER NECESARIO EN EL PLUGIN (añadir al bloque de headers) │
+└─────────────────────────────────────────────────────────────────┘
+
+/**
+ * Plugin Name: Mi Plugin
+ * Version: 1.0.0
+ * Gitea Plugin URI: ROBOTSTXT/mi-plugin
+ * ...otros headers...
+ */
+
+
+┌─────────────────────────────────────────────────────────────────┐
+│ 4. PLANTILLA update.json (crear en la raíz del plugin)         │
+└─────────────────────────────────────────────────────────────────┘
+
+{
+  "name": "Mi Plugin",
+  "slug": "mi-plugin",
+  "version": "1.0.0",
+  "requires": "6.0",
+  "tested": "6.7",
+  "requires_php": "8.0",
+  "homepage": "https://git.robotstxt.es/ROBOTSTXT/mi-plugin",
+  "download_url": "https://git.robotstxt.es/ROBOTSTXT/mi-plugin/archive/v1.0.0.zip",
+  "author": "ROBOTSTXT",
+  "description": "Descripción del plugin",
+  "changelog": "<ul><li><strong>1.0.0</strong> – Primera versión.</li></ul>"
+}
+
+
+┌─────────────────────────────────────────────────────────────────┐
+│ 5. PUBLICAR NUEVA VERSIÓN                                       │
+└─────────────────────────────────────────────────────────────────┘
+
+# Paso 1: Cambiar versión en el header del plugin
+# Paso 2: Actualizar update.json con nueva version y download_url
+# Paso 3: Commit y tag
+
+git add .
+git commit -m "Release v1.2.0"
+git tag v1.2.0
+git push origin main --tags
+
+
+┌─────────────────────────────────────────────────────────────────┐
+│ 6. TESTING (forzar comprobación)                                │
+└─────────────────────────────────────────────────────────────────┘
+
+URL: /wp-admin/?robotstxt_clear_update_cache=1
+
+
+═══════════════════════════════════════════════════════════════════
+  ¡ESO ES TODO! Con estas 2 líneas tu plugin ya tiene updater
+═══════════════════════════════════════════════════════════════════

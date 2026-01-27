@@ -26,39 +26,9 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 require_once __DIR__ . '/includes/class-robotstxt-hello-plugin.php';
-require_once __DIR__ . '/includes/class-robotstxt-hello-updater.php';
 
 ( new Robotstxt_Hello_Plugin() )->register();
 
-// Initialize the JSON updater.
-$robotstxt_hello_updater = new Robotstxt_Hello_Updater(
-	plugin_basename( __FILE__ ), // 'robotstxt-hello/robotstxt-hello.php'
-	'https://git.robotstxt.es/ROBOTSTXT/robotstxt-hello/raw/branch/main/update.json'
-);
-$robotstxt_hello_updater->register();
-
-/**
- * Clear updater cache (for testing/development).
- *
- * Usage: Add ?robotstxt_hello_clear_update_cache=1 to any admin page URL
- * or call do_action('robotstxt_hello_clear_update_cache') from code.
- */
-add_action(
-	'admin_init',
-	function () use ( $robotstxt_hello_updater ) {
-		if ( isset( $_GET['robotstxt_hello_clear_update_cache'] ) && current_user_can( 'update_plugins' ) ) {
-			$robotstxt_hello_updater->clear_cache();
-			delete_site_transient( 'update_plugins' );
-			wp_safe_redirect( remove_query_arg( 'robotstxt_hello_clear_update_cache' ) );
-			exit;
-		}
-	}
-);
-
-add_action(
-	'robotstxt_hello_clear_update_cache',
-	function () use ( $robotstxt_hello_updater ) {
-		$robotstxt_hello_updater->clear_cache();
-		delete_site_transient( 'update_plugins' );
-	}
-);
+// Initialize ROBOTSTXT updater (auto-configures from plugin headers).
+require_once __DIR__ . '/robotstxt-updater.php';
+Robotstxt_Updater::init( __FILE__ );
